@@ -33,6 +33,7 @@ BEGIN_MESSAGE_MAP(CCadSurfDoc, CDocument)
 	ON_COMMAND(ID_SPHERE, OnSphere)
 	ON_COMMAND(ID_TORUS, OnTorus)
 	ON_COMMAND(ID_BSPLINESURFACE, OnBSplineSurface)
+	ON_COMMAND(ID_BEZIERSURFACE, OnBezierSurface)
 	ON_COMMAND(ID_EXTSURF, OnExtsurf)
 	ON_COMMAND(ID_REVSURF, OnRevsurf)
 	ON_COMMAND(ID_RULEDSURF, OnRuledsurf)
@@ -933,6 +934,20 @@ void CCadSurfDoc::OnBSplineSurface()
 	::CWaitCursor aCur;
 
 	CBSplineSurface S;
+	CGLSurface* gS = new CGLSurface(&S);
+	dContext->Display(gS);
+
+	delete gS;
+}
+
+void CCadSurfDoc::OnBezierSurface() 
+{
+	// TODO: Add your command handler code here
+	dContext->DeleteAll();
+
+	::CWaitCursor aCur;
+
+	CBezierSurface S;
 	CGLSurface* gS = new CGLSurface(&S);
 	dContext->Display(gS);
 

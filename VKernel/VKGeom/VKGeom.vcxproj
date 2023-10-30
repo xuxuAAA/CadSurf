@@ -144,6 +144,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="BezierSurface.cpp" />
     <ClCompile Include="BoundingBox.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -361,6 +362,7 @@
     <ClInclude Include="AxisSystem.h" />
     <ClInclude Include="BasicSurface.h" />
     <ClInclude Include="BezierCurve.h" />
+    <ClInclude Include="BezierSurface.h" />
     <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Bsp.h" />
     <ClInclude Include="BSplineCurve.h" />

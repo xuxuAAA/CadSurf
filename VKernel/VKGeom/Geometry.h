@@ -47,6 +47,7 @@ class CCylinder;
 class CSphere;
 class CTorus;
 class CBSplineSurface;
+class CBezierSurface;
 class CExtrudedSurface;
 class CRevolvedSurface;
 class CRuledSurface;

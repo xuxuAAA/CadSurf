@@ -307,6 +307,7 @@ BEGIN
     BUTTON      ID_SPHERE
     BUTTON      ID_TORUS
     BUTTON      ID_BSPLINESURFACE
+    BUTTON      ID_BEZIERSURFACE
     SEPARATOR
     BUTTON      ID_EXTSURF
     BUTTON      ID_REVSURF
@@ -764,6 +765,7 @@ END
 STRINGTABLE
 BEGIN
     ID_BSPLINESURFACE       "Create A B Spline Surface \nB Spline Surface"
+    ID_BEZIERSURFACE        "Create A Bezier Surface \nBezier Surface"
 END
 
 #endif    // Ó¢Óï(ÃÀ¹ú) resources
