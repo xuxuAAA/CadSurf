@@ -32,6 +32,7 @@ BEGIN_MESSAGE_MAP(CCadSurfDoc, CDocument)
 	ON_COMMAND(ID_CONE, OnCone)
 	ON_COMMAND(ID_SPHERE, OnSphere)
 	ON_COMMAND(ID_TORUS, OnTorus)
+	ON_COMMAND(ID_BSPLINESURFACE, OnBSplineSurface)
 	ON_COMMAND(ID_EXTSURF, OnExtsurf)
 	ON_COMMAND(ID_REVSURF, OnRevsurf)
 	ON_COMMAND(ID_RULEDSURF, OnRuledsurf)
@@ -922,6 +923,20 @@ void CCadSurfDoc::OnTorus()
 
 	delete myFont; delete myFont1;	delete myFont2;	delete myFont3;
 	delete gP; delete gS; delete gP1; delete gS1; delete gAx;
+}
+
+void CCadSurfDoc::OnBSplineSurface() 
+{
+	// TODO: Add your command handler code here
+	dContext->DeleteAll();
+
+	::CWaitCursor aCur;
+
+	CBSplineSurface S;
+	CGLSurface* gS = new CGLSurface(&S);
+	dContext->Display(gS);
+
+	delete gS;
 }
 
 void CCadSurfDoc::OnExtsurf() 

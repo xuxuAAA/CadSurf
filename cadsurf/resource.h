@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by CadSurf.rc
+// Microsoft Visual C++ 生成的包含文件。
+// 供 CadSurf.rc 使用
 //
 #define IDR_MANIFEST                    1
 #define IDD_ABOUTBOX                    100
@@ -137,6 +137,7 @@
 #define ID_SKECH_CIRCLE                 32853
 #define ID_32854                        32854
 #define ID_SKETCH_CLOSE                 32855
+#define ID_BSPLINESURFACE               32856
 
 // Next default values for new objects
 // 
@@ -144,7 +145,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        145
-#define _APS_NEXT_COMMAND_VALUE         32856
+#define _APS_NEXT_COMMAND_VALUE         32857
 #define _APS_NEXT_CONTROL_VALUE         1032
 #define _APS_NEXT_SYMED_VALUE           109
 #endif

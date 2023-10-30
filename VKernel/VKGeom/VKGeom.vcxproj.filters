@@ -183,6 +183,9 @@
     <ClCompile Include="VKGeom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BSplineSurface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arc.h">
@@ -351,6 +354,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VKGeom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BSplineSurface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

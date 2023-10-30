@@ -53,6 +53,7 @@
 #include <Cylinder.h>
 #include <Sphere.h>
 #include <Torus.h>
+#include <BSplineSurface.h>
 #include <ExtrudedSurface.h>
 #include <RevolvedSurface.h>
 #include <RuledSurface.h>
@@ -125,6 +126,7 @@ protected:
 	afx_msg void OnCone();
 	afx_msg void OnSphere();
 	afx_msg void OnTorus();
+	afx_msg void OnBSplineSurface();
 	afx_msg void OnExtsurf();
 	afx_msg void OnRevsurf();
 	afx_msg void OnRuledsurf();
