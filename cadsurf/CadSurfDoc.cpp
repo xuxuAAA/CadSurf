@@ -5,6 +5,7 @@
 #include "CadSurf.h"
 
 #include "CadSurfDoc.h"
+#include "Points.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -431,14 +432,15 @@ void CCadSurfDoc::OnBezier()
 
 	::CWaitCursor aCur;
 	CListOfCPoint3D *myCPList = new CListOfCPoint3D;
-	CPoint3D P1(-450,-200,-00);
-	CPoint3D P2(-350,300,-00);
-	CPoint3D P3(-200,-300,-00);
-	CPoint3D P4(-200,400,-00);
-	CPoint3D P5(200,-300,-00);
-	CPoint3D P6(300,400,-00);
-	CPoint3D P7(350,-200,-00);
-	CPoint3D P8(400,300,-00);
+	CPoint3D P1(-450, -200, -00);
+	CPoint3D P2(-350, 300, -00);
+	CPoint3D P3(-200, -300, -00);
+	CPoint3D P4(-200, 400, -00);
+	CPoint3D P5(200, -300, -00);
+	CPoint3D P6(300, 400, -00);
+	CPoint3D P7(350, -200, -00);
+	CPoint3D P8(400, 300, -00);
+
 	myCPList->Append(P1);
 	myCPList->Append(P2);
 	myCPList->Append(P3);
@@ -517,14 +519,17 @@ void CCadSurfDoc::OnBspline()
 
 	::CWaitCursor aCur;
 	CListOfCPoint3D *myCPList = new CListOfCPoint3D;
-	CPoint3D P1(-450,-200,-00);
-	CPoint3D P2(-350,300,-00);
-	CPoint3D P3(-200,-300,-00);
-	CPoint3D P4(-200,400,-00);
-	CPoint3D P5(200,-300,-00);
-	CPoint3D P6(300,400,-00);
-	CPoint3D P7(350,-200,-00);
-	CPoint3D P8(400,300,-00);
+	CPoint3D P1(-450, -200, -00);
+	CPoint3D P2(-350, 300, -00);
+	CPoint3D P3(-200, -300, -00);
+	CPoint3D P4(-200, 400, -00);
+	CPoint3D P5(200, -300, -00);
+	CPoint3D P6(300, 400, -00);
+	CPoint3D P7(350, -200, -00);
+	CPoint3D P8(400, 300, -00);
+	
+
+
 	myCPList->Append(P1);
 	myCPList->Append(P2);
 	myCPList->Append(P3);
@@ -926,28 +931,135 @@ void CCadSurfDoc::OnTorus()
 	delete gP; delete gS; delete gP1; delete gS1; delete gAx;
 }
 
-void CCadSurfDoc::OnBSplineSurface() 
+void CCadSurfDoc::OnBSplineSurface() //B样条曲面
 {
 	// TODO: Add your command handler code here
 	dContext->DeleteAll();
 
 	::CWaitCursor aCur;
 
-	CBSplineSurface S;
+	double x1 = 20; double y1 = 0; double z1 = 200;
+	double x2 = 0; double y2 = 100; double z2 = 150;
+	double x3 = -130; double y3 = 100; double z3 = 50;
+	double x4 = -250; double y4 = 50; double z4 = 0;
+	double x5 = 100; double y5 = 100; double z5 = 150;
+	double x6 = 30; double y6 = 100; double z6 = 100;
+	double x7 = -40; double y7 = 100; double z7 = 50;
+	double x8 = -110; double y8 = 50; double z8 = 0;
+	double x9 = 280; double y9 = 90; double z9 = 140;
+	double x10 = 110; double y10 = 120; double z10 = 80;
+	double x11 = 0; double y11 = 130; double z11 = 30;
+	double x12 = -100; double y12 = 150; double z12 = -50;
+	double x13 = 350; double y13 = 30; double z13 = 150;
+	double x14 = 200; double y14 = 150; double z14 = 50;
+	double x15 = 50; double y15 = 200; double z15 = 0;
+	double x16 = 0; double y16 = 100; double z16 = -70;
+	Points point;
+	point.point1_x = x1; point.point1_y = y1; point.point1_z = z1;
+	point.point2_x = x2; point.point2_y = y2; point.point2_z = z2;
+	point.point3_x = x3; point.point3_y = y3; point.point3_z = z3;
+	point.point4_x = x4; point.point4_y = y4; point.point4_z = z4;
+	point.point5_x = x5; point.point5_y = y5; point.point5_z = z5;
+	point.point6_x = x6; point.point6_y = y6; point.point6_z = z6;
+	point.point7_x = x7; point.point7_y = y7; point.point7_z = z7;
+	point.point8_x = x8; point.point8_y = y8; point.point8_z = z8;
+	point.point9_x = x9; point.point9_y = y9; point.point9_z = z9;
+	point.point10_x = x10; point.point10_y = y10; point.point10_z = z10;
+	point.point11_x = x11; point.point11_y = y11; point.point11_z = z11;
+	point.point12_x = x12; point.point12_y = y12; point.point12_z = z12;
+	point.point13_x = x13; point.point13_y = y13; point.point13_z = z13;
+	point.point14_x = x14; point.point14_y = y14; point.point14_z = z14;
+	point.point15_x = x15; point.point15_y = y15; point.point15_z = z15;
+	point.point16_x = x16; point.point16_y = y16; point.point16_z = z16;
+	if (point.DoModal() == IDOK)
+	{
+		x1 = point.point1_x; y1 = point.point1_y; z1 = point.point1_z;
+		x2 = point.point2_x; y2 = point.point2_y; z2 = point.point2_z;
+		x3 = point.point3_x; y3 = point.point3_y; z3 = point.point3_z;
+		x4 = point.point4_x; y4 = point.point4_y; z4 = point.point4_z;
+		x5 = point.point5_x; y5 = point.point5_y; z5 = point.point5_z;
+		x6 = point.point6_x; y6 = point.point6_y; z6 = point.point6_z;
+		x7 = point.point7_x; y7 = point.point7_y; z7 = point.point7_z;
+		x8 = point.point8_x; y8 = point.point8_y; z8 = point.point8_z;
+		x9 = point.point9_x; y9 = point.point9_y; z9 = point.point9_z;
+		x10 = point.point10_x; y10 = point.point10_y; z10 = point.point10_z;
+		x11 = point.point11_x; y11 = point.point11_y; z11 = point.point11_z;
+		x12 = point.point12_x; y12 = point.point12_y; z12 = point.point12_z;
+		x13 = point.point13_x; y13 = point.point13_y; z13 = point.point13_z;
+		x14 = point.point14_x; y14 = point.point14_y; z14 = point.point14_z;
+		x15 = point.point15_x; y15 = point.point15_y; z15 = point.point15_z;
+		x16 = point.point16_x; y16 = point.point16_y; z16 = point.point16_z;
+	}
+
+	CBSplineSurface S = CBSplineSurface(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, z5, x6, y6, z6, x7, y7, z7, x8, y8, z8, x9, y9, z9, x10, y10, z10, x11, y11, z11,
+		x12, y12, z12, x13, y13, z13, x14, y14, z14, x15, y15, z15, x16, y16, z16);
+	
 	CGLSurface* gS = new CGLSurface(&S);
 	dContext->Display(gS);
 
 	delete gS;
 }
 
-void CCadSurfDoc::OnBezierSurface() 
+void CCadSurfDoc::OnBezierSurface() //Bezier曲面
 {
 	// TODO: Add your command handler code here
 	dContext->DeleteAll();
 
 	::CWaitCursor aCur;
-
-	CBezierSurface S;
+	double x1 = 20; double y1 = 0; double z1 = 200;
+	double x2 = 0; double y2 = 100; double z2 = 150;
+	double x3 = -130; double y3 = 100; double z3 = 50;
+	double x4 = -250; double y4 = 50; double z4 = 0;
+	double x5 = 100; double y5 = 100; double z5 = 150;
+	double x6 = 30; double y6 = 100; double z6 = 100;
+	double x7 = -40; double y7 = 100; double z7 = 50;
+	double x8 = -110; double y8 = 50; double z8 = 0;
+	double x9 = 280; double y9 = 90; double z9 = 140;
+	double x10 = 110; double y10 = 120; double z10 = 80;
+	double x11 = 0; double y11 = 130; double z11 = 30;
+	double x12 = -100; double y12 = 150; double z12 = -50;
+	double x13 = 350; double y13 = 30; double z13 = 150;
+	double x14 = 200; double y14 = 150; double z14 = 50;
+	double x15 = 50; double y15 = 200; double z15 = 0;
+	double x16 = 0; double y16 = 100; double z16 = -70;
+	Points point;
+	point.point1_x = x1; point.point1_y = y1; point.point1_z = z1;
+	point.point2_x = x2; point.point2_y = y2; point.point2_z = z2;
+	point.point3_x = x3; point.point3_y = y3; point.point3_z = z3;
+	point.point4_x = x4; point.point4_y = y4; point.point4_z = z4;
+	point.point5_x = x5; point.point5_y = y5; point.point5_z = z5;
+	point.point6_x = x6; point.point6_y = y6; point.point6_z = z6;
+	point.point7_x = x7; point.point7_y = y7; point.point7_z = z7;
+	point.point8_x = x8; point.point8_y = y8; point.point8_z = z8;
+	point.point9_x = x9; point.point9_y = y9; point.point9_z = z9;
+	point.point10_x = x10; point.point10_y = y10; point.point10_z = z10;
+	point.point11_x = x11; point.point11_y = y11; point.point11_z = z11;
+	point.point12_x = x12; point.point12_y = y12; point.point12_z = z12;
+	point.point13_x = x13; point.point13_y = y13; point.point13_z = z13;
+	point.point14_x = x14; point.point14_y = y14; point.point14_z = z14;
+	point.point15_x = x15; point.point15_y = y15; point.point15_z = z15;
+	point.point16_x = x16; point.point16_y = y16; point.point16_z = z16;
+	if (point.DoModal() == IDOK)
+	{
+		x1 = point.point1_x; y1 = point.point1_y; z1 = point.point1_z;
+		x2 = point.point2_x; y2 = point.point2_y; z2 = point.point2_z;
+		x3 = point.point3_x; y3 = point.point3_y; z3 = point.point3_z;
+		x4 = point.point4_x; y4 = point.point4_y; z4 = point.point4_z;
+		x5 = point.point5_x; y5 = point.point5_y; z5 = point.point5_z;
+		x6 = point.point6_x; y6 = point.point6_y; z6 = point.point6_z;
+		x7 = point.point7_x; y7 = point.point7_y; z7 = point.point7_z;
+		x8 = point.point8_x; y8 = point.point8_y; z8 = point.point8_z;
+		x9 = point.point9_x; y9 = point.point9_y; z9 = point.point9_z;
+		x10 = point.point10_x; y10 = point.point10_y; z10 = point.point10_z;
+		x11 = point.point11_x; y11 = point.point11_y; z11 = point.point11_z;
+		x12 = point.point12_x; y12 = point.point12_y; z12 = point.point12_z;
+		x13 = point.point13_x; y13 = point.point13_y; z13 = point.point13_z;
+		x14 = point.point14_x; y14 = point.point14_y; z14 = point.point14_z;
+		x15 = point.point15_x; y15 = point.point15_y; z15 = point.point15_z;
+		x16 = point.point16_x; y16 = point.point16_y; z16 = point.point16_z;
+	}
+	CBezierSurface S = CBezierSurface(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, x5, y5, z5, x6, y6, z6, x7, y7, z7, x8, y8, z8, x9, y9, z9, x10, y10, z10, x11, y11, z11,
+		x12, y12, z12, x13, y13, z13, x14, y14, z14, x15, y15, z15, x16, y16, z16);
 	CGLSurface* gS = new CGLSurface(&S);
 	dContext->Display(gS);
 
