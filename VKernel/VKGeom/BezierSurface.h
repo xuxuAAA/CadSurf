@@ -11,7 +11,11 @@
 class VKGEOM_API CBezierSurface : public CBasicSurface
 {
 public:
-	CBezierSurface();
+	CBezierSurface(double x1, double y1, double z1, double x2, double y2, double z2, double x3, double y3, double z3,
+		double x4, double y4, double z4, double x5, double y5, double z5, double x6, double y6, double z6, double x7, double y7, double z7,
+		double x8, double y8, double z8, double x9, double y9, double z9, double x10, double y10, double z10, double x11, double y11, double z11,
+		double x12, double y12, double z12, double x13, double y13, double z13, double x14, double y14, double z14, double x15, double y15, double z15,
+		double x16, double y16, double z16);
 	CBezierSurface(const std::array<std::array<CPoint3D, 4>, 4>&);
 	inline void SetCpMatrix(const std::array<std::array<CPoint3D, 4>, 4>& newCpMatrix) { cpMat = newCpMatrix; }
 	inline std::array<std::array<CPoint3D, 4>, 4> GetCpMatrix() const { return cpMat; }

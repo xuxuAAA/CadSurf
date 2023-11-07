@@ -5,26 +5,30 @@
 #include "MMath.h"
 #include "GeomException.h"
 
-CBezierSurface::CBezierSurface()
+CBezierSurface::CBezierSurface(double x1, double y1, double z1, double x2, double y2, double z2, double x3, double y3, double z3,
+    double x4, double y4, double z4, double x5, double y5, double z5, double x6, double y6, double z6, double x7, double y7, double z7,
+    double x8, double y8, double z8, double x9, double y9, double z9, double x10, double y10, double z10, double x11, double y11, double z11,
+    double x12, double y12, double z12, double x13, double y13, double z13, double x14, double y14, double z14, double x15, double y15, double z15,
+    double x16, double y16, double z16)
 {
-    cpMat[0][0] = CPoint3D(20, 0, 200);
-    cpMat[0][1] = CPoint3D(0, 100, 150);
-    cpMat[0][2] = CPoint3D(-130, 100, 50);
-    cpMat[0][3] = CPoint3D(-250, 50, 0);
-    cpMat[1][0] = CPoint3D(100, 100, 150);
-    cpMat[1][1] = CPoint3D(30, 100, 100);
-    cpMat[1][2] = CPoint3D(-40, 100, 50);
-    cpMat[1][3] = CPoint3D(-110, 50, 0);
-    cpMat[2][0] = CPoint3D(280, 90, 140);
-    cpMat[2][1] = CPoint3D(110, 120, 80);
-    cpMat[2][2] = CPoint3D(0, 130, 30);
-    cpMat[2][3] = CPoint3D(-100, 150, -50);
-    cpMat[3][0] = CPoint3D(350, 30, 150);
-    cpMat[3][1] = CPoint3D(200, 150, 50);
-    cpMat[3][2] = CPoint3D(50, 200, 0);
-    cpMat[3][3] = CPoint3D(0, 100, -70);
+    cpMat[0][0] = CPoint3D(x1, y1, z1);
+    cpMat[0][1] = CPoint3D(x2, y2, z2);
+    cpMat[0][2] = CPoint3D(x3, y3, z3);
+    cpMat[0][3] = CPoint3D(x4, y4, z4);
+    cpMat[1][0] = CPoint3D(x5, y5, z5);
+    cpMat[1][1] = CPoint3D(x6, y6, z6);
+    cpMat[1][2] = CPoint3D(x7, y7, z7);
+    cpMat[1][3] = CPoint3D(x8, y8, z8);
+    cpMat[2][0] = CPoint3D(x9, y9, z9);
+    cpMat[2][1] = CPoint3D(x10, y10, z10);
+    cpMat[2][2] = CPoint3D(x11, y11, z11);
+    cpMat[2][3] = CPoint3D(x12, y12, z12);
+    cpMat[3][0] = CPoint3D(x13, y13, z13);
+    cpMat[3][1] = CPoint3D(x14, y14, z14);
+    cpMat[3][2] = CPoint3D(x15, y15, z15);
+    cpMat[3][3] = CPoint3D(x16, y16, z16);
 }
-
+ 
 CBezierSurface::CBezierSurface(const std::array<std::array<CPoint3D, 4>, 4>& newCpMatrix) : cpMat(newCpMatrix)
 {
 }
